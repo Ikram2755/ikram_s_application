@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable name="favouriteVM" type="com.ikramsapplication.app.modules.favourite.data.viewmodel.FavouriteVM"/>
+    </data>
+    <LinearLayout android:gravity="center_horizontal"
+        android:id="@+id/linearColumnfavourite"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent" android:orientation="vertical">
+        <LinearLayout android:gravity="center_horizontal"
+            android:id="@+id/linearFAVOURITE"
+            android:layout_height="match_parent"
+            android:layout_width="match_parent" android:orientation="vertical">
+            <FrameLayout android:gravity="start"
+                android:id="@+id/frameStackarrowleft"
+                android:layout_height="@dimen/_864pxv"
+                android:layout_width="match_parent" style="@style/groupStyle_1">
+                <LinearLayout android:id="@+id/linearColumnarrowleft"
+                    android:layout_gravity="top|center"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/_10pxv"
+                    android:layout_marginEnd="@dimen/_35pxh"
+                    android:layout_marginStart="@dimen/_35pxh"
+                    android:layout_marginTop="@dimen/_9pxv"
+                    android:layout_width="match_parent"
+                    android:orientation="vertical" style="@style/groupStyleblack_900_3f">
+                    <ImageView android:id="@+id/imageArrowleft"
+                        android:layout_height="@dimen/_21pxh"
+                        android:layout_marginEnd="@dimen/_1pxh"
+                        android:layout_marginStart="@dimen/_322pxh"
+                        android:layout_marginTop="@dimen/_12pxv"
+                        android:layout_width="@dimen/_21pxh"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/img_arrowleft"
+                        tools:ignore="ContentDescription" tools:src="@drawable/img_arrowleft"/>
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:gravity="start"
+                        android:id="@+id/recyclerAdapterseventy"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_120pxv"
+                        android:layout_width="match_parent"
+                        android:orientation="vertical"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                        itemSpace="@{@dimen/_10pxh}" tools:itemCount="6" tools:listitem="@layout/row_adapterseventy"/>
+                </LinearLayout>
+                <LinearLayout android:id="@+id/linearRowgroupfour"
+                    android:layout_gravity="top|end"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/_85pxv"
+                    android:layout_marginEnd="@dimen/_28pxh"
+                    android:layout_marginStart="@dimen/_28pxh"
+                    android:layout_marginTop="@dimen/_85pxv"
+                    android:layout_width="match_parent" android:orientation="horizontal">
+                    <androidx.appcompat.widget.SearchView
+                        android:background="@drawable/rectangle_border_white_a700_radius_5"
+                        android:id="@+id/searchViewGroupFour"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.88"
+                        android:layout_width="0dp"
+                        android:theme="@style/searchViewGroupFour"
+                        app:iconifiedByDefault="false"
+                        app:queryBackground="@android:color/transparent"
+                        app:queryHint="@string/lbl_search_recipe" app:searchIcon="@drawable/img_search"/>
+                    <ImageButton
+                        android:background="@drawable/rectangle_border_white_a700_radius_6"
+                        android:id="@+id/btnFilter"
+                        android:layout_height="@dimen/_35pxh"
+                        android:layout_marginStart="@dimen/_49pxh"
+                        android:layout_width="@dimen/_35pxh"
+                        android:paddingHorizontal="@dimen/_7pxh"
+                        android:paddingVertical="@dimen/_7pxv"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/img_filter" tools:ignore="ContentDescription"/>
+                </LinearLayout>
+                <TextView android:ellipsize="end"
+                    android:id="@+id/txtFavourite"
+                    android:layout_gravity="top|start"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/_15pxv"
+                    android:layout_marginEnd="@dimen/_34pxh"
+                    android:layout_marginStart="@dimen/_34pxh"
+                    android:layout_marginTop="@dimen/_15pxv"
+                    android:layout_width="wrap_content"
+                    android:singleLine="true"
+                    android:text="@{favouriteVM.favouriteModel.txtFavourite}"
+                    style="@style/txtLoraromanbold24" tools:text="@string/lbl_favourite"/>
+            </FrameLayout>
+            <androidx.recyclerview.widget.RecyclerView
+                android:gravity="center_horizontal"
+                android:id="@+id/recyclerListlocationSix"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_34pxh"
+                android:layout_marginStart="@dimen/_34pxh"
+                android:layout_marginTop="@dimen/_426pxv"
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                itemSpace="@{@dimen/_10pxh}" tools:itemCount="2" tools:listitem="@layout/row_listlocation_six"/>
+        </LinearLayout>
+    </LinearLayout>
+</layout>

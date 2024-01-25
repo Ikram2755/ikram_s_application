@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable name="recommendedVM" type="com.ikramsapplication.app.modules.recommended.data.viewmodel.RecommendedVM"/>
+    </data>
+    <LinearLayout android:gravity="center_horizontal"
+        android:id="@+id/linearColumnlanguage"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent" android:orientation="vertical">
+        <LinearLayout android:gravity="center_horizontal"
+            android:id="@+id/linearRECOMMENDED"
+            android:layout_height="match_parent"
+            android:layout_width="match_parent" android:orientation="vertical">
+            <FrameLayout android:gravity="start"
+                android:id="@+id/frameStack"
+                android:layout_height="@dimen/_1044pxv" android:layout_width="match_parent">
+                <FrameLayout android:id="@+id/frameStackarrowleft"
+                    android:layout_gravity="top|start"
+                    android:layout_height="@dimen/_864pxv"
+                    android:layout_marginBottom="@dimen/_10pxv"
+                    android:layout_width="match_parent" style="@style/groupStyle_1">
+                    <LinearLayout
+                        android:id="@+id/linearColumnarrowleft"
+                        android:layout_gravity="center"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/_2pxv"
+                        android:layout_marginEnd="@dimen/_35pxh"
+                        android:layout_marginStart="@dimen/_35pxh"
+                        android:layout_marginTop="@dimen/_9pxv"
+                        android:layout_width="match_parent"
+                        android:orientation="vertical" style="@style/groupStyleblack_900_3f">
+                        <ImageView android:id="@+id/imageArrowleft"
+                            android:layout_height="@dimen/_21pxh"
+                            android:layout_marginEnd="@dimen/_1pxh"
+                            android:layout_marginStart="@dimen/_322pxh"
+                            android:layout_marginTop="@dimen/_12pxv"
+                            android:layout_width="@dimen/_21pxh"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/img_arrowleft"
+                            tools:ignore="ContentDescription" tools:src="@drawable/img_arrowleft"/>
+                        <LinearLayout android:id="@+id/linearSearch"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="@dimen/_763pxv"
+                            android:layout_marginEnd="@dimen/_2pxh"
+                            android:layout_marginStart="@dimen/_2pxh"
+                            android:layout_marginTop="@dimen/_21pxv"
+                            android:layout_width="match_parent" android:orientation="horizontal">
+                            <androidx.appcompat.widget.SearchView
+                                android:background="@drawable/rectangle_border_white_a700_radius_5"
+                                android:id="@+id/searchViewGroupTwentyOne"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="0.88"
+                                android:layout_width="0dp"
+                                android:theme="@style/searchViewGroupTwentyOne"
+                                app:iconifiedByDefault="false"
+                                app:queryBackground="@android:color/transparent"
+                                app:queryHint="@string/lbl_search_recipe" app:searchIcon="@drawable/img_search"/>
+                            <ImageButton
+                                android:background="@drawable/rectangle_border_white_a700_radius_6"
+                                android:id="@+id/btnFilter"
+                                android:layout_height="@dimen/_35pxh"
+                                android:layout_marginStart="@dimen/_49pxh"
+                                android:layout_width="@dimen/_35pxh"
+                                android:paddingHorizontal="@dimen/_7pxh"
+                                android:paddingVertical="@dimen/_7pxv"
+                                android:scaleType="fitCenter"
+                                android:src="@drawable/img_filter" tools:ignore="ContentDescription"/>
+                        </LinearLayout>
+                    </LinearLayout>
+                    <TextView android:ellipsize="end"
+                        android:id="@+id/txtLanguage"
+                        android:layout_gravity="top|start"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/_15pxv"
+                        android:layout_marginEnd="@dimen/_34pxh"
+                        android:layout_marginStart="@dimen/_34pxh"
+                        android:layout_marginTop="@dimen/_15pxv"
+                        android:layout_width="wrap_content"
+                        android:singleLine="true"
+                        android:text="@{recommendedVM.recommendedModel.txtLanguage}"
+                        style="@style/txtLoraromanbold24" tools:text="@string/lbl_recommended2"/>
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recyclerGridlocation"
+                        android:layout_gravity="bottom|center"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/_51pxv"
+                        android:layout_marginEnd="@dimen/_34pxh"
+                        android:layout_marginStart="@dimen/_34pxh"
+                        android:layout_marginTop="@dimen/_51pxv"
+                        android:layout_width="match_parent"
+                        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                        app:spanCount="2" itemSpace="@{@dimen/_10pxh}"
+                        tools:itemCount="6" tools:listitem="@layout/row_gridlocation1"/>
+                </FrameLayout>
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerRecommended"
+                    android:layout_gravity="bottom|center"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/_34pxh"
+                    android:layout_marginStart="@dimen/_34pxh"
+                    android:layout_marginTop="@dimen/_10pxv"
+                    android:layout_width="match_parent"
+                    android:orientation="horizontal"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    itemSpace="@{@dimen/_10pxh}" tools:itemCount="2" tools:listitem="@layout/row_recommended"/>
+            </FrameLayout>
+            <androidx.recyclerview.widget.RecyclerView
+                android:gravity="center_horizontal"
+                android:id="@+id/recyclerGridlocationEight"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_34pxh"
+                android:layout_marginStart="@dimen/_34pxh"
+                android:layout_marginTop="@dimen/_15pxv"
+                android:layout_width="match_parent"
+                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                app:spanCount="2" itemSpace="@{@dimen/_10pxh}"
+                tools:itemCount="4" tools:listitem="@layout/row_gridlocation_eight1"/>
+        </LinearLayout>
+    </LinearLayout>
+</layout>

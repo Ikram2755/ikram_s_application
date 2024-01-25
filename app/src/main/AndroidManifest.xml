@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest package="com.ikramsapplication.app" xmlns:android="http://schemas.android.com/apk/res/android">
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <application android:allowBackup="false"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name" android:largeHeap="true"
+        android:name="com.ikramsapplication.app.appcomponents.di.MyApp"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true" android:theme="@style/Theme.MyApp" android:usesCleartextTraffic="true">
+        <activity
+            android:name="com.ikramsapplication.app.modules.recent.ui.RecentActivity" android:screenOrientation="portrait"/>
+        <activity
+            android:name="com.ikramsapplication.app.modules.video.ui.VideoActivity" android:screenOrientation="portrait"/>
+        <activity
+            android:name="com.ikramsapplication.app.modules.recipedetail.ui.RecipeDetailActivity" android:screenOrientation="portrait"/>
+        <activity android:exported="true"
+            android:name="com.ikramsapplication.app.modules.register.ui.RegisterActivity" android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.ikramsapplication.app.modules.upload.ui.UploadActivity" android:screenOrientation="portrait"/>
+        <activity
+            android:name="com.ikramsapplication.app.modules.profile.ui.ProfileActivity" android:screenOrientation="portrait"/>
+        <activity
+            android:name="com.ikramsapplication.app.modules.sidemenu.ui.SideMenuActivity" android:screenOrientation="portrait"/>
+        <activity
+            android:name="com.ikramsapplication.app.modules.favourite.ui.FavouriteActivity" android:screenOrientation="portrait"/>
+        <activity
+            android:name="com.ikramsapplication.app.modules.recipe.ui.RecipeActivity" android:screenOrientation="portrait"/>
+        <activity
+            android:name="com.ikramsapplication.app.modules.home.ui.HomeActivity" android:screenOrientation="portrait"/>
+        <activity
+            android:name="com.ikramsapplication.app.modules.filter.ui.FilterActivity" android:screenOrientation="portrait"/>
+        <activity
+            android:name="com.ikramsapplication.app.modules.login.ui.LoginActivity" android:screenOrientation="portrait"/>
+        <activity
+            android:name="com.ikramsapplication.app.modules.seeall.ui.SeeAllActivity" android:screenOrientation="portrait"/>
+        <activity
+            android:name="com.ikramsapplication.app.modules.recommended.ui.RecommendedActivity" android:screenOrientation="portrait"/>
+    </application>
+</manifest>
